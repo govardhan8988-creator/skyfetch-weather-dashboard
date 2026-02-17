@@ -6,19 +6,18 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     text-align: center;
     max-width: 500px;
     width: 100%;
@@ -27,60 +26,85 @@ body {
 h1 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 10px;
 }
 
 .tagline {
     color: #666;
-    margin-bottom: 30px;
-    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
-#weather-display {
-    margin-top: 30px;
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.loading {
-    color: #667eea;
-    font-size: 1.1rem;
+#city-input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
 }
 
-.weather-info {
-    animation: fadeIn 0.5s ease-in;
+#city-input:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#search-btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    opacity: 0.9;
 }
 
 .city-name {
     font-size: 2rem;
-    color: #333;
-    margin-bottom: 10px;
 }
 
 .temperature {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #667eea;
     font-weight: bold;
-    margin: 20px 0;
 }
 
 .description {
-    font-size: 1.3rem;
-    color: #555;
     text-transform: capitalize;
-    margin-bottom: 15px;
 }
 
 .weather-icon {
     width: 100px;
-    height: 100px;
+}
+
+.error-message {
+    background: #ffe5e5;
+    color: #c0392b;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #eee;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
