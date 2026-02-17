@@ -6,32 +6,29 @@
     <title>SkyFetch - Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>🌤️ SkyFetch</h1>
-        <p class="tagline">Your Personal Weather Dashboard</p>
+<div class="container">
+    <h1>🌤️ SkyFetch</h1>
+    <p class="tagline">Your Personal Weather Dashboard</p>
 
-        <!-- Search Section -->
-        <div class="search-section">
-            <input
-                type="text"
-                id="city-input"
-                placeholder="Enter city name..."
-            />
-            <button id="search-btn">🔍 Search</button>
-        </div>
-
-        <div id="weather-display">
-            <div class="welcome-message">
-                Enter a city name to get weather data.
-            </div>
-        </div>
+    <!-- Search -->
+    <div class="search-section">
+        <input id="city-input" type="text" placeholder="Enter city name..." />
+        <button id="search-btn">🔍 Search</button>
     </div>
 
-    <!-- Axios CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Recent Searches -->
+    <div id="recent-searches-section" class="recent-searches-section">
+        <h4>Recent Searches</h4>
+        <div id="recent-searches-container"></div>
+    </div>
 
-    <!-- JavaScript -->
-    <script src="app.js"></script>
+    <!-- Weather Display -->
+    <div id="weather-display"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
